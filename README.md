@@ -7,4 +7,4 @@ And it is a nice practice.
 
 Thanks for reading.
 
-Build with FastAPI and Astro.
+Made with FastAPI and Astro.
