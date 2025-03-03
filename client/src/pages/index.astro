@@ -1,0 +1,36 @@
+---
+
+const response = await fetch("http://127.0.0.1:8000/shorten",
+	{
+		method: 'POST',
+		headers: {'Content-Type':'application/json'},
+		body: JSON.stringify({
+			"long_url": "https://fangx.ing"
+		})
+	});
+
+const json = await response.json();
+const { short } = json;
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Url Shortener</title>
+	</head>
+	<body>
+		<h1>URL Shortener</h1>
+		<form id="url-form" action="" method="get">
+			<div>
+				<label for="url"></label>
+				<input type="text" required name="url" id="url"/>
+			</div>
+			<input type="submit" value="Shorten!">
+		</form>
+		<h2>Shortened Url: {short}</h2>
+	</body>
+</html>
